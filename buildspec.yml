@@ -2,19 +2,23 @@ version: 0.2
 
 phases:
   install:
-    runtime-version:
+    runtime-versions:
       java: corretto21
+
   build:
     commands:
-      - echo building, Testing and Packaging the Application
+      - echo Building, Testing and Packaging the Application
       - mvn package -DskipTests
+
   post_build:
     commands:
-      - echo Build Testing and packaging Completed
+      - echo Build, Testing and Packaging Completed
+
 artifacts:
   files:
     - target/*.jar
   discard-paths: yes
+
 cache:
   paths:
     - '/root/.m2/**/*'
